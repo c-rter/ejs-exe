@@ -1,4 +1,5 @@
 function triangleFunction() {
+
     let triangleDepth = document.getElementById("depth").value;
     let divBlock = "";
     let hashLine = "";
@@ -7,4 +8,5 @@ function triangleFunction() {
       divBlock += hashLine + "<br>"
     }
     document.getElementById("triangleSpan").innerHTML = divBlock;
+    
   };
