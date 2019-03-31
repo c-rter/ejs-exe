@@ -1,4 +1,9 @@
 const isEven = (target) => {
+
+  if (target < 0) {
+    target *= -1;
+  }  
+  
   if (target == 0) {
     return true;
   }
