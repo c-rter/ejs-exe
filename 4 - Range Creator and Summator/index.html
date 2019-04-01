@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <title>Range Creator and Summator (Not Completed)</title>
+  <meta name="description" content="c4e1">
+  <meta name="author" content="c-rter">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+
+  <h2>Enter Start and End Integers for a Range, and a Step (Optional)</h2>
+
+  <form id="frm1">
+    <input type="text" id="startInt"></input>
+    <input type="text" id="endInt"></input>
+    <input type="button" value="Submit" onClick="receiveInput()">
+  </form>
+
+  <form id="frm2">
+    <input type="button" value="Submit" onClick="summateRange()">
+  </form>
+  
+  <br>
+
+  <h2>Range Array:</h2>
+  <span id="range"></span>
+
+  <h2>Sum of Array:</h2>
+  <span id="sum"></span>
+
+  <script src="logic.js"></script>
+
+</body>
+
+</html>
