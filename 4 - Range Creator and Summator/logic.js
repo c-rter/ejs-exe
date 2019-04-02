@@ -13,7 +13,7 @@ const createRange = (start, end, step) => {
     }
   }
   else if (stepCount < 0) {
-    for (i = startCount; i >= endCount; i -= step) {
+    for (i = startCount; i >= endCount; i += stepCount) {
       rangeArr.push(i);
     }
   }
