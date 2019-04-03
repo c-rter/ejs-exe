@@ -1,4 +1,4 @@
-// In Progress
+let currentArray;
 
 const createRange = (start, end, step) => {
 
@@ -23,7 +23,7 @@ const createRange = (start, end, step) => {
     }
   }
 
-return rangeArr;
+  return rangeArr;
 
 }
 
@@ -31,6 +31,16 @@ const receiveInput = () => {
   let startInt = document.getElementById("startInt").value;
   let endInt = document.getElementById("endInt").value;
   let stepInt = document.getElementById("stepInt").value;
-  document.getElementById("range").innerHTML = createRange(startInt, endInt, stepInt);
+  currentArray = createRange(startInt, endInt, stepInt);
+  document.getElementById("range").innerHTML = currentArray;
 
-};
+}
+
+const summateRange = () => {
+  let runningSum = 0;
+  for (i = 0; i < currentArray.length; i++) {
+    runningSum += currentArray[i];
+  }
+  document.getElementById("sum").innerHTML = runningSum;
+
+}

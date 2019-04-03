@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Range Creator and Summator (Not Completed)</title>
+  <title>Range Creator and Summator</title>
   <meta name="description" content="c4e1">
   <meta name="author" content="c-rter">
   <!--[if lt IE 9]>
@@ -18,16 +18,47 @@
   <h2>Enter Start and End Integers for a Range, and a Step (Optional)</h2>
 
   <form id="frm1">
-    <input type="text" id="startInt"></input>
-    <input type="text" id="endInt"></input>
-    <input type="text" id="stepInt"></input>
-    <input type="button" value="Submit" onClick="receiveInput()">
+    <table>
+      <tr>
+        <td>
+          Start:
+        </td>
+        <td>
+          <input type="text" id="startInt"></input>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          End:
+        </td>
+        <td>
+          <input type="text" id="endInt"></input>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Step:
+        </td>
+        <td>
+          <input type="text" id="stepInt"></input>
+        </td>
+      </tr>
+      <tr><td></td></tr>
+      <tr>
+        <td>
+          <input type="button" value="Create Array" onClick="receiveInput()">
+        </td>
+      </tr>
   </form>
-<br/>
+  <br/>
   <form id="frm2">
-    <input type="button" value="Submit" onClick="summateRange()">
+    <tr>
+    <td>
+      <input type="button" value="Summate Array" onClick="summateRange()">
+    </td>
+  </tr>
   </form>
-  
+  </table>
   <br>
 
   <h2>Range Array:</h2>
