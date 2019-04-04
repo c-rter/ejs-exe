@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <title>Range Creator and Summator</title>
+  <meta name="description" content="c4e1">
+  <meta name="author" content="c-rter">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+
+  <h2>Enter Start and End Integers for a Range, and a Step (Optional)</h2>
+
+  <form id="frm1">
+    <table>
+      <tr>
+        <td>
+          Start:
+        </td>
+        <td>
+          <input type="text" id="startInt"></input>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          End:
+        </td>
+        <td>
+          <input type="text" id="endInt"></input>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Step:
+        </td>
+        <td>
+          <input type="text" id="stepInt"></input>
+        </td>
+      </tr>
+      <tr><td></td></tr>
+      <tr>
+        <td>
+          <input type="button" value="Create Array" onClick="receiveInput()">
+        </td>
+      </tr>
+  </form>
+  <br/>
+  <form id="frm2">
+    <tr>
+    <td>
+      <input type="button" value="Summate Array" onClick="summateRange()">
+    </td>
+  </tr>
+  </form>
+  </table>
+  <br>
+
+  <h2>Range Array:</h2>
+  <span id="range"></span>
+
+  <h2>Sum of Array:</h2>
+  <span id="sum"></span>
+
+  <script src="logic.js"></script>
+
+</body>
+
+</html>
