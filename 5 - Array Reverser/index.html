@@ -15,38 +15,23 @@
 
 <body>
 
-  <h2>Enter Start and End Integers for a Range, and a Step (Optional)</h2>
+  <h2>Enter an Array</h2>
 
   <form id="frm1">
     <table>
       <tr>
         <td>
-          Start:
+          Enter an Array:
         </td>
         <td>
           <input type="text" id="startInt"></input>
         </td>
       </tr>
+
+      <tr><td>&nbsp;</td></tr>
       <tr>
         <td>
-          End:
-        </td>
-        <td>
-          <input type="text" id="endInt"></input>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Step:
-        </td>
-        <td>
-          <input type="text" id="stepInt"></input>
-        </td>
-      </tr>
-      <tr><td></td></tr>
-      <tr>
-        <td>
-          <input type="button" value="Create Array" onClick="receiveInput()">
+          <input type="button" value="Reverse Method 1" onClick="receiveInput()">
         </td>
       </tr>
   </form>
@@ -54,18 +39,15 @@
   <form id="frm2">
     <tr>
     <td>
-      <input type="button" value="Summate Array" onClick="summateRange()">
+      <input type="button" value="Reverse Method 2" onClick="summateRange()">
     </td>
   </tr>
   </form>
   </table>
   <br>
 
-  <h2>Range Array:</h2>
+  <h2>Reversed Array:</h2>
   <span id="range"></span>
-
-  <h2>Sum of Array:</h2>
-  <span id="sum"></span>
 
   <script src="logic.js"></script>
 
