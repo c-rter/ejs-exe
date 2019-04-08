@@ -16,6 +16,10 @@ const reverse2 = () => {
   currentArray = createRange(startInt, endInt, stepInt);
 }
 
+const clearArraySpot = () => {
+  document.getElementById("arrayRenderSpot").innerHTML = "";
+}
+
 // let stepInt = document.getElementById("stepInt").value;
 // document.getElementById("range").innerHTML = currentArray;
 
