@@ -17,11 +17,9 @@ const reverse2 = () => {
   console.log(parsedArray2);
 
   for (i = 0; i < parsedArray2.length; i++) {
-    let tmp;
-
-    parsedArray2[i] = tmp;
-    parsedArray2[i] = parsedArray2[parsedArray2.length - i];
-    parsedArray2[parsedArray2.length - i] = tmp;
+    let tmp = parsedArray2[i];
+    parsedArray2[i] = parsedArray2[parsedArray2.length - i - 1];
+    parsedArray2[parsedArray2.length - i - 1] = tmp;
 
   }
   console.log(parsedArray2);
