@@ -14,16 +14,13 @@ const reverse1 = () => {
 const reverse2 = () => {
   let arrayRaw2 = document.getElementById("textArray").value;
   let parsedArray2 = JSON.parse(arrayRaw2);
-  console.log(parsedArray2);
-
-  for (i = 0; i < parsedArray2.length; i++) {
+  
+  for (i = 0; i < (parsedArray2.length/2); i++) {
     let tmp = parsedArray2[i];
-    parsedArray2[i] = parsedArray2[parsedArray2.length - i - 1];
+    parsedArray2[i] = parsedArray2[((parsedArray2.length - i) - 1)];
     parsedArray2[parsedArray2.length - i - 1] = tmp;
-
   }
-  console.log(parsedArray2);
-
+  document.getElementById("arrayRenderSpot").innerHTML = parsedArray2;
 }
 
 const clearArraySpot = () => {
