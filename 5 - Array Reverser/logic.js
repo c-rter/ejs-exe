@@ -1,7 +1,6 @@
 const reverse1 = () => {
   let arrayRaw = document.getElementById("textArray").value;
   let parsedArray = JSON.parse(arrayRaw);
-  console.log(parsedArray);
 
   reversedArray = [];
   for (i = 0; i < parsedArray.length; i++) {
@@ -26,7 +25,3 @@ const reverse2 = () => {
 const clearArraySpot = () => {
   document.getElementById("arrayRenderSpot").innerHTML = "";
 }
-
-// let stepInt = document.getElementById("stepInt").value;
-// document.getElementById("range").innerHTML = currentArray;
-
