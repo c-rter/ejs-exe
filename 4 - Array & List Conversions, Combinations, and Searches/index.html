@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <title>Array Reverser</title>
+  <meta name="description" content="c4e2">
+  <meta name="author" content="c-rter">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+
+  <h2>Array Reverser - Two Ways</h2>
+<h3>Enter an array in the format [1, 2, 3, 4, etc.]</h3>
+  <form id="frm1">
+    <table>
+      <tr>
+        <td>
+          Enter an Array:
+        </td>
+        <td>
+          <input type="text" id="textArray"></input>
+        </td>
+      </tr>
+
+      <tr><td>&nbsp;</td></tr>
+      <tr>
+        <td>
+          <input type="button" value="Reverse Method 1" onClick="reverse1()">
+        </td>
+      </tr>
+  </form>
+  <br/>
+  <form id="frm2">
+    <tr>
+    <td>
+      <input type="button" value="Reverse Method 2" onClick="reverse2()">
+    </td>
+  </tr>
+  </form>
+  <form id="frm3">
+    <tr>
+    <td>
+      <input type="button" value="Clear" onClick="clearArraySpot()">
+    </td>
+  </tr>
+  </form>
+  </table>
+  <br>
+
+  <h2>Reversed Array:</h2>
+  <span id="arrayRenderSpot"></span>
+
+  <script src="logic.js"></script>
+
+</body>
+
+</html>
