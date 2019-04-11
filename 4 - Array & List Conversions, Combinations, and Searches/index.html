@@ -15,23 +15,39 @@
 
 <body>
 
-  <h2>Array Reverser - Two Ways</h2>
-<h3>Enter an array in the format [1, 2, 3, 4, etc.]</h3>
+  <h2>All Sorts Converter</h2>
   <form id="frm1">
     <table>
       <tr>
         <td>
-          Enter an Array:
+          Enter an Array to Convert a List:
         </td>
         <td>
           <input type="text" id="textArray"></input>
         </td>
       </tr>
-
-      <tr><td>&nbsp;</td></tr>
       <tr>
         <td>
-          <input type="button" value="Reverse Method 1" onClick="reverse1()">
+          Enter a List to Convert to Array:
+        </td>
+        <td>
+          <input type="text" id="textArray"></input>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Enter a List and an Element to Prepend:
+        </td>
+        <td>
+          <input type="text" id="textArray"></input>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Enter a List and a Number to Return Element at that Number's Position:
+        </td>
+        <td>
+          <input type="text" id="textArray"></input>
         </td>
       </tr>
   </form>
@@ -39,7 +55,7 @@
   <form id="frm2">
     <tr>
     <td>
-      <input type="button" value="Reverse Method 2" onClick="reverse2()">
+      <input type="button" value="Convert" onClick="reverse2()">
     </td>
   </tr>
   </form>
@@ -53,7 +69,7 @@
   </table>
   <br>
 
-  <h2>Reversed Array:</h2>
+  <h2>Converted Data:</h2>
   <span id="arrayRenderSpot"></span>
 
   <script src="logic.js"></script>
