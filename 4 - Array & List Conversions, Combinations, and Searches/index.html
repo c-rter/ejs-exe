@@ -10,20 +10,19 @@
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
-
 </head>
 
 <body>
 
   <h2>All Sorts Converter</h2>
   <form id="frm1">
-    <table>
+    <table border=1 frame=void rules=rows>
       <tr>
         <td>
           Enter an Array to Convert a List:
         </td>
         <td>
-          <input type="text" id="textArray"></input>
+         Array: <input type="text" id="textArray"></input>
         </td>
       </tr>
       <tr>
@@ -31,7 +30,7 @@
           Enter a List to Convert to Array:
         </td>
         <td>
-          <input type="text" id="textArray"></input>
+         List: <input type="text" id="textArray"></input>
         </td>
       </tr>
       <tr>
@@ -39,7 +38,10 @@
           Enter a List and an Element to Prepend:
         </td>
         <td>
-          <input type="text" id="textArray"></input>
+          List: <input type="text" id="textArray"></input>
+        </td>
+        <td>
+          Element: <input type="text" id="textArray"></input>
         </td>
       </tr>
       <tr>
@@ -47,26 +49,26 @@
           Enter a List and a Number to Return Element at that Number's Position:
         </td>
         <td>
-          <input type="text" id="textArray"></input>
+          List: <input type="text" id="textArray"></input>
+        </td>
+        <td>
+          Number: <input type="text" id="textArray"></input>
         </td>
       </tr>
+    </table>
   </form>
   <br/>
   <form id="frm2">
-    <tr>
-    <td>
+
       <input type="button" value="Convert" onClick="reverse2()">
-    </td>
-  </tr>
+
   </form>
   <form id="frm3">
-    <tr>
-    <td>
-      <input type="button" value="Clear" onClick="clearArraySpot()">
-    </td>
-  </tr>
+
+      <input type="button" value="Clear Form Values" onClick="clearArraySpot()">
+ 
   </form>
-  </table>
+
   <br>
 
   <h2>Converted Data:</h2>
