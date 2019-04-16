@@ -31,17 +31,21 @@ const clearArraySpot = () => {
 }
 
 let receiver = {
+
   arrayToList: function () {
-
+    alert("Array to List");
   },
+
   listToArray: function () {
-
+    alert("List to Array");
   },
+  
   listPrepend: function () {
-
+    alert("List with Prepend");
   },
-  listReturn: function () {
 
+  listReturn: function () {
+    alert("Return Element List");
   }
 
 };
