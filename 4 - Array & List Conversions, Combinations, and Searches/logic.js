@@ -4,23 +4,25 @@ const inputRouter = () => {
     "elementPrepend", "listReturn", "elementReturn"];
 
   let valiCounter = 0;
-  let routerLog = "";
+  let routerLog = [];
 
   for (i = 0; i < fields.length - 1; i++) {
     if (!(document.getElementById(fields[i]).value == "")) {
       valiCounter++;
-      routerLog = fields[i];
+      routerLog.push(fields[i]);
     }
   }
 
   if (valiCounter < 1) {
     alert("no input!");
   }
-  else if (valiCounter > 1) {
+  else if ((valiCounter > 1) &&
+    (!(document.getElementById(arrayToList) == "") || !(document.getElementById(listToArray) == ""))
+  ) {
     alert("too many inputs!");
   }
   else {
-    receiver[routerLog]();
+    receiver[routerLog[0]]();
   }
 }
 
