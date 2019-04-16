@@ -16,9 +16,10 @@ const inputRouter = () => {
   if (valiCounter < 1) {
     alert("no input!");
   }
-  else if ((valiCounter > 1) &&
-    (!(document.getElementById(arrayToList) == "") || !(document.getElementById(listToArray) == ""))
-  ) {
+  else if (valiCounter > 2 || ((valiCounter > 1) &&
+    (!(document.getElementById("arrayToList").value == "")
+    || !(document.getElementById("listToArray").value == ""))
+  )) {
     alert("too many inputs!");
   }
   else {
