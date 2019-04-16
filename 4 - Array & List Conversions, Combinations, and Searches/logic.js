@@ -28,13 +28,27 @@ const inputRouter = () => {
 }
 
 const clearArraySpot = () => {
-  document.getElementById("arrayRenderSpot").innerHTML = "";
+  document.getElementById("resultRenderSpot").innerHTML = "";
 }
 
 let receiver = {
 
   arrayToList: function () {
-    alert("Array to List");
+    console.log("Array to List");
+    let inputArray = document.getElementById("arrayToList").value;
+
+    /*   let list = {
+      value: 1,
+      rest: {
+        value: 2,
+        rest: {
+          value: 3,
+          rest: null
+        }
+      }
+    }; */
+
+    document.getElementById("resultRenderSpot").innerHTML = JSON.stringify(list);
   },
 
   listToArray: function () {
