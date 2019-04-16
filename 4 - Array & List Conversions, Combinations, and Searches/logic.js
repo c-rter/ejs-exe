@@ -36,7 +36,6 @@ let receiver = {
   arrayToList: function () {
     console.log("Array to List");
     let inputArray = document.getElementById("arrayToList").value;
-    let convertList 
     /*   let list = {
       value: 1,
       rest: {
