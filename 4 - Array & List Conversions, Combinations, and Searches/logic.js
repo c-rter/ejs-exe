@@ -18,7 +18,7 @@ const inputRouter = () => {
   }
   else if (valiCounter > 2 || ((valiCounter > 1) &&
     (!(document.getElementById("arrayToList").value == "")
-    || !(document.getElementById("listToArray").value == ""))
+      || !(document.getElementById("listToArray").value == ""))
   )) {
     alert("too many inputs!");
   }
@@ -36,6 +36,8 @@ let receiver = {
   arrayToList: function () {
     console.log("Array to List");
     let inputArray = document.getElementById("arrayToList").value;
+    let parsedArray = JSON.parse(inputArray);
+
     /*   let list = {
       value: 1,
       rest: {
@@ -46,14 +48,26 @@ let receiver = {
         }
       }
     }; */
+    let convertedList = {};
 
-    document.getElementById("resultRenderSpot").innerHTML = JSON.stringify(list);
+    for (i = parsedArray.length - 1; i > -1; i--) {
+
+      convertedList.value = parsedArray[i];
+      convertedList.rest = {convertedList}
+    }
+
+    console.log(convertedList);
+
+    
+
+    document.getElementById("resultRenderSpot").innerHTML = JSON.stringify(parsedArray);
+  
   },
 
   listToArray: function () {
     alert("List to Array");
   },
-  
+
   listPrepend: function () {
     alert("List with Prepend");
   },
