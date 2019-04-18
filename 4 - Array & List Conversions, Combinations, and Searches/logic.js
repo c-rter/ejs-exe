@@ -49,19 +49,23 @@ let receiver = {
       }
     }; */
     let convertedList = {};
+    convertedList.rest = null;
 
-    for (i = parsedArray.length - 1; i > -1; i--) {
 
-      convertedList.value = parsedArray[i];
-      convertedList.rest = {convertedList}
+    for (i = 0; i < 10; i++) {
+
+      convertedList = { value: i, rest: convertedList };
+      console.log(i);
+      console.log(parsedArray[i]);
+      console.log(convertedList);
     }
 
     console.log(convertedList);
 
-    
+
 
     document.getElementById("resultRenderSpot").innerHTML = JSON.stringify(parsedArray);
-  
+
   },
 
   listToArray: function () {
