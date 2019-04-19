@@ -53,7 +53,7 @@ let receiver = {
 
 
     for (i = parsedArray.length-1; i > -1; i--) {
-      convertedList = { value: parsedArray.length[i], rest: convertedList };
+      convertedList = { value: parsedArray[i], rest: convertedList };
     }
 
     console.log(convertedList);
