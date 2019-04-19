@@ -52,12 +52,8 @@ let receiver = {
     convertedList.rest = null;
 
 
-    for (i = 0; i < 10; i++) {
-
-      convertedList = { value: i, rest: convertedList };
-      console.log(i);
-      console.log(parsedArray[i]);
-      console.log(convertedList);
+    for (i = parsedArray.length-1; i > -1; i--) {
+      convertedList = { value: parsedArray.length[i], rest: convertedList };
     }
 
     console.log(convertedList);
