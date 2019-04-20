@@ -53,6 +53,9 @@ let receiver = {
 
   listToArray: function () {
     
+    alert("List to Array");
+    let inputList = document.getElementById("listToArray").value;
+
     /*   let list = {
       value: 1,
       rest: {
@@ -63,8 +66,12 @@ let receiver = {
         }
       }
     }; */
-    
-    alert("List to Array");
+    for (let node = list; node; node = node.rest) {
+
+
+
+    }
+
   },
 
   listPrepend: function () {
