@@ -48,12 +48,15 @@ let receiver = {
         }
       }
     }; */
+
     let convertedList = {};
-    convertedList.rest = null;
 
-
-    for (i = parsedArray.length-1; i > -1; i--) {
+    for (i = parsedArray.length - 1; i > -1; i--) {
       convertedList = { value: parsedArray[i], rest: convertedList };
+      if (i == parsedArray.length - 1) {
+        convertedList.rest = null;
+
+      }
     }
 
     console.log(convertedList);
