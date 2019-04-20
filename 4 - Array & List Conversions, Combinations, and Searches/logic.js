@@ -38,6 +38,21 @@ let receiver = {
     let inputArray = document.getElementById("arrayToList").value;
     let parsedArray = JSON.parse(inputArray);
 
+    let convertedList = {};
+
+    for (i = parsedArray.length - 1; i > -1; i--) {
+      convertedList = { value: parsedArray[i], rest: convertedList };
+      if (i == parsedArray.length - 1) {
+        convertedList.rest = null;
+
+      }
+    }
+    document.getElementById("resultRenderSpot").innerHTML = JSON.stringify(convertedList);
+
+  },
+
+  listToArray: function () {
+    
     /*   let list = {
       value: 1,
       rest: {
@@ -48,26 +63,7 @@ let receiver = {
         }
       }
     }; */
-
-    let convertedList = {};
-
-    for (i = parsedArray.length - 1; i > -1; i--) {
-      convertedList = { value: parsedArray[i], rest: convertedList };
-      if (i == parsedArray.length - 1) {
-        convertedList.rest = null;
-
-      }
-    }
-
-    console.log(convertedList);
-
-
-
-    document.getElementById("resultRenderSpot").innerHTML = JSON.stringify(parsedArray);
-
-  },
-
-  listToArray: function () {
+    
     alert("List to Array");
   },
 
