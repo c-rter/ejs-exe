@@ -56,16 +56,6 @@ let receiver = {
     let inputList = document.getElementById("listToArray").value;
     let parsedArray = JSON.parse(inputList);
 
-    /*   let list = {
-      value: 1,
-      rest: {
-        value: 2,
-        rest: {
-          value: 3,
-          rest: null
-        }
-      }
-    }; */
     let convertedArray = [];
     for (let node = parsedArray; node; node = node.rest) {
       convertedArray.push(node.value);
@@ -86,12 +76,19 @@ let receiver = {
   },
 
   listReturn: function () {
-    alert("Return Element List");
+    
+/*
+    let inputList = document.getElementById("listToArray").value;
+    let parsedArray = JSON.parse(inputList);
+
+    let convertedArray = [];
+    for (let node = parsedArray; node; node = node.rest) {
+      convertedArray.push(node.value);
+    }
+    console.log(convertedArray);
+    document.getElementById("resultRenderSpot").innerHTML = JSON.stringify(convertedArray);
+ */
+
   }
 
 };
-
-
-/*   let arrayRaw = document.getElementById("textArray").value;
-  let parsedArray = JSON.parse(arrayRaw);
- document.getElementById("arrayRenderSpot").innerHTML = reversedArray; */
