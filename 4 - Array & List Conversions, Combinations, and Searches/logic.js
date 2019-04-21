@@ -29,7 +29,7 @@ const inputRouter = () => {
 
 const clearAll = () => {
   document.getElementById("resultRenderSpot").innerHTML = "";
-  document.getElementById("frm1").reset(); 
+  document.getElementById("frm1").reset();
 
 }
 
@@ -52,7 +52,7 @@ let receiver = {
   },
 
   listToArray: function () {
-    
+
     let inputList = document.getElementById("listToArray").value;
     let parsedArray = JSON.parse(inputList);
 
@@ -76,7 +76,13 @@ let receiver = {
   },
 
   listPrepend: function () {
-    alert("List with Prepend");
+
+    let inputElement = document.getElementById("elementPrepend").value;
+    let inputList = document.getElementById("listPrepend").value;
+    let parsedList = JSON.parse(inputList);
+    parsedList = { value: inputElement, rest: parsedList }
+    document.getElementById("resultRenderSpot").innerHTML = JSON.stringify(parsedList);
+
   },
 
   listReturn: function () {
