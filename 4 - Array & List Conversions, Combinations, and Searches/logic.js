@@ -27,8 +27,10 @@ const inputRouter = () => {
   }
 }
 
-const clearArraySpot = () => {
+const clearAll = () => {
   document.getElementById("resultRenderSpot").innerHTML = "";
+  document.getElementById("frm1").reset(); 
+
 }
 
 let receiver = {
@@ -37,14 +39,12 @@ let receiver = {
     console.log("Array to List");
     let inputArray = document.getElementById("arrayToList").value;
     let parsedArray = JSON.parse(inputArray);
-
     let convertedList = {};
 
     for (i = parsedArray.length - 1; i > -1; i--) {
       convertedList = { value: parsedArray[i], rest: convertedList };
       if (i == parsedArray.length - 1) {
         convertedList.rest = null;
-
       }
     }
     document.getElementById("resultRenderSpot").innerHTML = JSON.stringify(convertedList);
@@ -53,8 +53,8 @@ let receiver = {
 
   listToArray: function () {
     
-    alert("List to Array");
     let inputList = document.getElementById("listToArray").value;
+    let parsedArray = JSON.parse(inputList);
 
     /*   let list = {
       value: 1,
@@ -66,11 +66,12 @@ let receiver = {
         }
       }
     }; */
-    for (let node = list; node; node = node.rest) {
-
-
-
+    let convertedArray = [];
+    for (let node = parsedArray; node; node = node.rest) {
+      convertedArray.push(node.value);
     }
+    console.log(convertedArray);
+    document.getElementById("resultRenderSpot").innerHTML = JSON.stringify(convertedArray);
 
   },
 
