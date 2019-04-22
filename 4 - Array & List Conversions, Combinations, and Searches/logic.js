@@ -76,7 +76,10 @@ let receiver = {
   },
 
   listReturn: function () {
-    
+
+    let inputElement = document.getElementById("elementReturn").value;
+    let inputList = document.getElementById("listReturn").value;
+
 /*
     let inputList = document.getElementById("listToArray").value;
     let parsedArray = JSON.parse(inputList);
