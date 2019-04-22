@@ -78,19 +78,30 @@ let receiver = {
   listReturn: function () {
 
     let inputElement = document.getElementById("elementReturn").value;
+    console.log(inputElement);
     let inputList = document.getElementById("listReturn").value;
-
-/*
-    let inputList = document.getElementById("listToArray").value;
     let parsedArray = JSON.parse(inputList);
-
-    let convertedArray = [];
+    let depthCounter = 0;
     for (let node = parsedArray; node; node = node.rest) {
-      convertedArray.push(node.value);
+
+      if (node.value == inputElement) {
+        document.getElementById("resultRenderSpot").innerHTML = depthCounter;
+      }
+      depthCounter++;
     }
-    console.log(convertedArray);
-    document.getElementById("resultRenderSpot").innerHTML = JSON.stringify(convertedArray);
- */
+
+
+    /*
+    let parsedArray = JSON.parse(inputList);
+    
+    let inputList = document.getElementById("listToArray").value;
+        let convertedArray = [];
+        for (let node = parsedArray; node; node = node.rest) {
+          convertedArray.push(node.value);
+        }
+        console.log(convertedArray);
+        document.getElementById("resultRenderSpot").innerHTML = JSON.stringify(convertedArray);
+     */
 
   }
 
