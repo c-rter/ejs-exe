@@ -80,13 +80,24 @@ let receiver = {
     let inputList = document.getElementById("listReturn").value;
     let parsedArray = JSON.parse(inputList);
     let depthCounter = 0;
-    for (let node = parsedArray; node; node = node.rest) {
+    node = parsedArray;
+    const recursiveReturn = (target) => {
 
       if (node.value == inputElement) {
-        document.getElementById("resultRenderSpot").innerHTML = depthCounter;
+        return depthCounter;
       }
-      depthCounter++;
+      else if (node.rest == null) {
+        alert("not found");
+      }
+      else {
+        node = node.rest;
+        depthCounter++;
+        return recursiveReturn(target);
+      }
+
     }
+
+        document.getElementById("resultRenderSpot").innerHTML = recursiveReturn(inputElement);
 
   }
 
