@@ -36,7 +36,6 @@ const clearAll = () => {
 let receiver = {
 
   arrayToList: function () {
-    console.log("Array to List");
     let inputArray = document.getElementById("arrayToList").value;
     let parsedArray = JSON.parse(inputArray);
     let convertedList = {};
@@ -78,7 +77,6 @@ let receiver = {
   listReturn: function () {
 
     let inputElement = document.getElementById("elementReturn").value;
-    console.log(inputElement);
     let inputList = document.getElementById("listReturn").value;
     let parsedArray = JSON.parse(inputList);
     let depthCounter = 0;
@@ -89,19 +87,6 @@ let receiver = {
       }
       depthCounter++;
     }
-
-
-    /*
-    let parsedArray = JSON.parse(inputList);
-    
-    let inputList = document.getElementById("listToArray").value;
-        let convertedArray = [];
-        for (let node = parsedArray; node; node = node.rest) {
-          convertedArray.push(node.value);
-        }
-        console.log(convertedArray);
-        document.getElementById("resultRenderSpot").innerHTML = JSON.stringify(convertedArray);
-     */
 
   }
 
