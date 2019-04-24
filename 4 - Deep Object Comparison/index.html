@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Deep Object Comparison</title>
+  <title>Deep Comparison</title>
   <meta name="description" content="c4e5">
   <meta name="author" content="c-rter">
   <!--[if lt IE 9]>
@@ -14,26 +14,30 @@
 
 <body>
 
-  <h2>Object Analyzer</h2>
+  <h2>Deep Value Analyzer</h2>
   <form id="frm1">
     <table border=1 frame=void rules=rows>
       <tr>
         <td>
-          Enter two objects to check if they are the same:
+          Enter two values to check if they are the same:<br/>
+          (Try two objects!)
+          <br/>          <br/>
+        </td>
+      </tr><tr>
+        <td>
+          Input 1:
+          <input type="text" id="input1"></input>
         </td>
         <td>
-          Object 1:
-          <input type="text" id="object1"></input>
-        </td>
-        <td>
-          Object 2:
-          <input type="text" id="object2"></input>
+          Input 2:
+          <input type="text" id="input2"></input>
         </td>
       </tr>
+    </tr><tr>
     </table>
     <br/>
 
-    <input type="button" value="Analyze" onClick="objectAnalyzer()">
+    <input type="button" value="Analyze" onClick="inputHandler()">
 
 
     <input type="button" value="Clear Form" onClick="clearForm()">
