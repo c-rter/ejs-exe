@@ -2,11 +2,27 @@ const inputHandler = () => {
 
   let input1 = document.getElementById("input1").value;
   let input2 = document.getElementById("input2").value;
+  let comparisonStatus = deepAnalyze (input1, input2);
 
 }
 
-const deepAnalyze = (object1, object2) => {
+const deepAnalyze = (input1, input2) => {
   
+
+  console.log(typeof input1);
+  console.log(typeof input2);
+
+if ((typeof input1 === "object" && input1 !== null) 
+&& (typeof input2 === "object" && input2 !== null)) {
+console.log("two objects");
+
+}
+
+else {
+console.log("not two objects");
+
+}
+
 //  check typeof
 //  if not object, use built in comparison, return boolean
 //  if objects:
