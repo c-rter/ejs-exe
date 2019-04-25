@@ -8,6 +8,7 @@ const inputHandler = () => {
 
 const deepAnalyze = (input1, input2) => {
   
+// use try and throw for JSON parse error catching
 
   console.log(typeof input1);
   console.log(typeof input2);
@@ -16,8 +17,8 @@ const deepAnalyze = (input1, input2) => {
   console.log(typeof parseTest);
   console.log(typeof parseTest2);
 
-if ((typeof input1 === "object" && input1 !== null) 
-&& (typeof input2 === "object" && input2 !== null)) {
+if ((typeof parseTest === "object" && parseTest !== null) 
+&& (typeof parseTest2 === "object" && parseTest2 !== null)) {
 console.log("two objects");
 
 }
