@@ -11,6 +11,10 @@ const deepAnalyze = (input1, input2) => {
 
   console.log(typeof input1);
   console.log(typeof input2);
+  let parseTest = JSON.parse(input1);
+  let parseTest = JSON.parse(input2);
+  console.log(typeof input1);
+  console.log(typeof input2);
 
 if ((typeof input1 === "object" && input1 !== null) 
 && (typeof input2 === "object" && input2 !== null)) {
