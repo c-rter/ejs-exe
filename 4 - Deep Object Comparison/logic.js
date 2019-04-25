@@ -21,6 +21,7 @@ if ((typeof parseTest === "object" && parseTest !== null)
 && (typeof parseTest2 === "object" && parseTest2 !== null)) {
 console.log("two objects");
 
+
 }
 
 else {
