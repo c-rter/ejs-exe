@@ -8,6 +8,27 @@ const inputHandler = () => {
 
 const testTheObjects = (object1, object2) => {
 
+  console.log(Object.keys({ here: { is: "an" }, object: 2 }));
+  // ["here", "object"]
+  let object1keys = Object.keys(object1);
+  let object2keys = Object.keys(object2);
+  if (object1keys.length != object2keys.length) {
+    return false;
+  }
+  
+  for (i = 0; i < object1keys.length; i++) {
+    if (object1keys[i] != object2keys[i]) {
+      return false;
+    }
+    else if (typeof object1[object1keys[i]] === "object") {
+      testTheObjects(object1[object1keys[i]], object2[object2keys[i]]);
+    }
+    else {
+      if (!(object1[object1keys[i]] === object2[object2keys[i]])) {
+        return false;
+      }
+    }
+  }
 
 
 }
