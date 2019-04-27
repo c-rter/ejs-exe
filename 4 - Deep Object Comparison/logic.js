@@ -10,6 +10,8 @@ const deepAnalyze = (input1, input2) => {
   
 // use try and throw for JSON parse error catching
 
+
+try {
   console.log(typeof input1);
   console.log(typeof input2);
   let parseTest = JSON.parse(input1);
@@ -17,17 +19,22 @@ const deepAnalyze = (input1, input2) => {
   console.log(typeof parseTest);
   console.log(typeof parseTest2);
 
-if ((typeof parseTest === "object" && parseTest !== null) 
-&& (typeof parseTest2 === "object" && parseTest2 !== null)) {
-console.log("two objects");
-
-
+  if ((typeof parseTest === "object" && parseTest !== null) 
+  && (typeof parseTest2 === "object" && parseTest2 !== null)) {
+  console.log("two objects");
+  
+  }
+  
+  else {
+  console.log("not two objects");
+  
+  }
+  
 }
+catch(err) {
+alert("not a proper value");
+} 
 
-else {
-console.log("not two objects");
-
-}
 
 //  check typeof
 //  if not object, use built in comparison, return boolean
