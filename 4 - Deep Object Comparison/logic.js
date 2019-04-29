@@ -1,21 +1,21 @@
 const inputHandler = () => {
-
   let input1 = document.getElementById("input1").value;
   let input2 = document.getElementById("input2").value;
   let comparisonStatus = deepAnalyze(input1, input2);
-
+  alert(testTheObjects({ here: { is: "an" }, object: 2 }, { here: { is: "an" }, object: 2 }));
 }
 
-const testTheObjects = (object1, object2) => {
 
-  console.log(Object.keys({ here: { is: "an" }, object: 2 }));
-  // ["here", "object"]
+const testTheObjects = (object1, object2) => {
   let object1keys = Object.keys(object1);
+  alert(object1keys);
   let object2keys = Object.keys(object2);
+  alert(object2keys);
+
   if (object1keys.length != object2keys.length) {
     return false;
   }
-  
+
   for (i = 0; i < object1keys.length; i++) {
     if (object1keys[i] != object2keys[i]) {
       return false;
@@ -29,16 +29,12 @@ const testTheObjects = (object1, object2) => {
       }
     }
   }
-
-
 }
 
 const deepAnalyze = (input1, input2) => {
-
   try {
     let parseTest = JSON.parse(input1);
     let parseTest2 = JSON.parse(input2);
-
     if ((typeof parseTest === "object" && parseTest !== null)
       && (typeof parseTest2 === "object" && parseTest2 !== null)) {
       console.log("two objects");
@@ -63,5 +59,4 @@ const deepAnalyze = (input1, input2) => {
 const clearForm = () => {
   document.getElementById("resultRenderSpot").innerHTML = "";
   document.getElementById("frm1").reset();
-
 }
