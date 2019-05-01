@@ -7,6 +7,7 @@
   <title>Minimum Returner</title>
   <meta name="description" content="c3e1">
   <meta name="author" content="c-rter">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
@@ -16,16 +17,24 @@
 <body>
 
   <h2>Minimum Returner</h2>
-  <form id="frm1">
-    <input type="text" id="num1"></input>
-    <input type="text" id="num2"></input>
-    <input type="button" value="Submit" onClick="minReturner()">
-  </form>
-  <br>
+  <div id="inputBlock" class="block">
+    <form id="frm1">
+      Value 1&nbsp;
+      <input type="text" id="num1"></input>
+      <br/> Value 2&nbsp;
+      <input type="text" id="num2"></input>
+      <br/>
+      <br/>
+      <input type="button" value="Submit" onClick="minReturner()">
+    </form>
+    <br/>
+  </div>
+  <br/>
   <h2>Your Minimum:</h2>
-  <span id="answer"></span>
-  <script src="logic.js"></script>
-
+  <div id="outputBlock" class="block">
+    <span id="answer"><br/></span>
+    <script src="logic.js"></script>
+  </div>
 </body>
 
 </html>

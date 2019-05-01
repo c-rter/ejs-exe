@@ -1,0 +1,33 @@
+* {
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#frm1 {
+color:blue;
+padding:5px;
+}
+
+h2 {
+color:darkblue;
+    
+}
+
+.block {
+
+padding:5px;
+border:blue solid;
+border-width: 2px;
+
+}
+
+#inputBlock {
+
+background-color:lightcyan;
+
+}
+
+#outputBlock {
+
+    background-color:lightyellow;
+
+}
