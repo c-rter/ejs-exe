@@ -5,15 +5,16 @@
  */
 
 const objectComparisonTest = () => {
-
-  alert(testTheObjects({ here: { is: "an" }, object: 2 }, { here: { is: "an" }, object: 2 }));
-
+  alert(testTheObjects({ here: { is: "an" }, object: 3 }, { here: { is: "an" }, object: 2 }));
 }
 
 const testTheObjects = (object1, object2) => {
 
-  alert(object1 === object2);
-  alert(typeof object1);
+  if (object1 === object2) return true;
+  if (object1 == null || typeof object1 != "object" || object2 == null || typeof object2 != "object") {
+    return false;
+  }
+
   let object1keys = Object.keys(object1);
   let object2keys = Object.keys(object2);
 
@@ -22,18 +23,19 @@ const testTheObjects = (object1, object2) => {
   }
 
   for (i = 0; i < object1keys.length; i++) {
+    console.log(object1keys);
+    console.log(object1keys[i]);
+    console.log(object1[object1keys[i]]);
     if (object1keys[i] != object2keys[i]) {
       return false;
     }
-    else if (typeof object1[object1keys[i]] === "object") {
-      testTheObjects(object1[object1keys[i]], object2[object2keys[i]]);
-    }
-    else {
-      if (!(object1[object1keys[i]] === object2[object2keys[i]])) {
-        return false;
-      }
+    else if (!testTheObjects(object1[object1keys[i]], object2[object2keys[i]])) {
+      return false;
     }
   }
+
+return true;
+
 }
 
 /* const deepAnalyze = (input1, input2) => {
