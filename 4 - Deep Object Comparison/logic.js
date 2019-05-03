@@ -23,6 +23,8 @@ const testTheObjects = (object1, object2) => {
   }
 
   for (i = 0; i < object1keys.length; i++) {
+    console.log(object1keys.length);
+    console.log(i);
     console.log(object1keys);
     console.log(object1keys[i]);
     console.log(object1[object1keys[i]]);
@@ -32,9 +34,10 @@ const testTheObjects = (object1, object2) => {
     else if (!testTheObjects(object1[object1keys[i]], object2[object2keys[i]])) {
       return false;
     }
+    console.log("reaching here");
   }
 
-return true;
+  return true;
 
 }
 
