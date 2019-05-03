@@ -1,16 +1,21 @@
-const inputHandler = () => {
+/* const inputHandler = () => {
   let input1 = document.getElementById("input1").value;
   let input2 = document.getElementById("input2").value;
-  let comparisonStatus = deepAnalyze(input1, input2);
+  let comparisonStatus = deepAnalyze(input1, input2);  }
+ */
+
+const objectComparisonTest = () => {
+
   alert(testTheObjects({ here: { is: "an" }, object: 2 }, { here: { is: "an" }, object: 2 }));
+
 }
 
-
 const testTheObjects = (object1, object2) => {
+
+  alert(object1 === object2);
+  alert(typeof object1);
   let object1keys = Object.keys(object1);
-  alert(object1keys);
   let object2keys = Object.keys(object2);
-  alert(object2keys);
 
   if (object1keys.length != object2keys.length) {
     return false;
@@ -31,7 +36,7 @@ const testTheObjects = (object1, object2) => {
   }
 }
 
-const deepAnalyze = (input1, input2) => {
+/* const deepAnalyze = (input1, input2) => {
   try {
     let parseTest = JSON.parse(input1);
     let parseTest2 = JSON.parse(input2);
@@ -54,7 +59,7 @@ const deepAnalyze = (input1, input2) => {
     alert("not a proper value");
     return false;
   }
-}
+} */
 
 const clearForm = () => {
   document.getElementById("resultRenderSpot").innerHTML = "";
