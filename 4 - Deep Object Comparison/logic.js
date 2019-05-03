@@ -5,7 +5,7 @@
  */
 
 const objectComparisonTest = () => {
-  alert(testTheObjects({ here: { is: "an" }, object: 3 }, { here: { is: "an" }, object: 2 }));
+  alert(testTheObjects({ here: { is: "an" }, object: 2 }, { here: { is: "an" }, object: 3 }));
 }
 
 const testTheObjects = (object1, object2) => {
@@ -22,19 +22,16 @@ const testTheObjects = (object1, object2) => {
     return false;
   }
 
-  for (i = 0; i < object1keys.length; i++) {
-    console.log(object1keys.length);
-    console.log(i);
-    console.log(object1keys);
-    console.log(object1keys[i]);
-    console.log(object1[object1keys[i]]);
-    if (object1keys[i] != object2keys[i]) {
+  for (let key of object1keys) {
+    console.log(key);
+
+    if (!object2keys.includes(key)) {
       return false;
     }
-    else if (!testTheObjects(object1[object1keys[i]], object2[object2keys[i]])) {
+    else if (!testTheObjects(object1[key], object2[key])) {
       return false;
     }
-    console.log("reaching here");
+    console.log(key);
   }
 
   return true;
