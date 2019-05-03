@@ -1,16 +1,23 @@
 
-function minReturner() {
 
-  let num1 = document.getElementById("num1").value;
-  let num2 = document.getElementById("num2").value;
+  function minReturner() {
 
-  if (num1 < num2) {
-    document.getElementById("answer").innerHTML = num1;
-  }
-  else if (num1 == num2) {
-    document.getElementById("answer").innerHTML = "No minimum";
-  }
-  else {
-    document.getElementById("answer").innerHTML = num2;
-  }
-};
+    let num1String = $("#num1").value;
+    let num2String = $("#num2").value;
+    console.log(typeof num1string);
+
+    let num1 = parseInt(num1String);
+    let num2 = parseInt(num2String);
+
+    if (num1 < num2) {
+      $("#answer").text(num1);
+
+    }
+    else if (num1 == num2) {
+      $("#answer").text("No minimum");
+    }
+    else {
+      $("#answer").text(num2);
+
+    }
+  };
