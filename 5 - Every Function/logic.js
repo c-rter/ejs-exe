@@ -12,7 +12,7 @@ function every(array, test) {
 // function that uses 'some' method
 
 function every2(array, test) {
-  if (array.some(test)) {
+  if (array.some(n => !test(n))) {
     return false;
   }
   return true;
