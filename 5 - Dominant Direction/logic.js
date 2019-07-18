@@ -1147,11 +1147,16 @@ function dominantDirection(text) {
   let directionDirectory = countBy(text, char => {
     let script = characterScript(char.codePointAt(0));
     return script ? script.direction : "none";
-  }).filter(({ name }) => name != "none").reduce((a, b) => {
-    return a.count > b.count ? a.name : b.name;
-  });
-
- return directionDirectory;
+  }).filter(({ name }) => name != "none");
+  
+  if (directionDirectory.length < 2) {
+    return directionDirectory[0].name
+  }
+  else {
+    return directionDirectory.reduce((a, b) => {
+      return a.count < b.count ? b.name : a.name;
+    });
+  }
 }
 
 console.log(dominantDirection("Hello!"));
