@@ -1,7 +1,12 @@
 class Group {
 
-    constructor() {
-        this.collection = [];
+    constructor(iterArray) {
+        if (iterArray === undefined) {
+            this.collection = [];
+        }
+        else {
+            this.collection = iterArray;
+        }
     }
 
     add(val) {
@@ -31,14 +36,17 @@ class Group {
         }
     }
 
+    static from(iterObj) {
+        let collection = [];
+        for (let item of iterObj) {
+            collection.push(item);
+        }
+        return new Group(collection);
+    }
+
 }
 
-let group = new Group;
-group.add(2);
-console.log(group.collection);
-group.delete(2);
-console.log(group.collection);
-/*
+
 
 let group = Group.from([10, 20]);
 console.log(group.has(10));
@@ -49,5 +57,3 @@ group.add(10);
 group.delete(10);
 console.log(group.has(10));
   // → false
-
-*/
