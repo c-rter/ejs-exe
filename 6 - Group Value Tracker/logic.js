@@ -1,47 +1,29 @@
 class Group {
 
-    constructor(iterArray) {
-        if (iterArray === undefined) {
-            this.collection = [];
-        }
-        else {
-            this.collection = iterArray;
+    constructor() {
+        this.groupArr = [];
+    }
+
+    add(newVal) {
+        if (!this.groupArr.includes(newVal)) {
+            this.groupArr.push(newVal);
         }
     }
 
-    add(val) {
-        if (this.collection.indexOf(val) === -1) {
-            this.collection.push(val);
-        }
-        else {
-            console.log("already in collection");
-        }
+    delete(delVal) {
+        this.groupArr = this.groupArr.filter(val => val != delVal);
     }
 
-    delete(val) {
-        if (this.collection.indexOf(val) === -1) {
-            console.log("not in collection");
-        }
-        else {
-            this.collection.splice(this.collection.indexOf(val), 1);
-        }
-    }
-
-    has(val) {
-        if (this.collection.indexOf(val) === -1) {
-            return false;
-        }
-        else {
-            return true;
-        }
+    has(testVal) {
+        return this.groupArr.includes(testVal);
     }
 
     static from(iterObj) {
-        let collection = [];
-        for (let item of iterObj) {
-            collection.push(item);
+        let group = new Group;
+        for (let obj of iterObj) {
+            group.add(obj);
         }
-        return new Group(collection);
+        return group;
     }
 
 }
