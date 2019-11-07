@@ -179,10 +179,21 @@ function goalOrientedRobot({ place, parcels }, route) {
     console.log(`Current Route: ${route}`);
     return { direction: route[0], memory: route.slice(1) };
 }
+// --------------------------------------------------------
 
-runRobot(VillageState.random(), goalOrientedRobot, []);
+
+// Robot Type III - More Efficient Robot ----------
+
+
+
+
+
+
+
 
 // --------------------------------------------------------
+
+
 
 function compareRobots(robot1, memory1, robot2, memory2) {
 
