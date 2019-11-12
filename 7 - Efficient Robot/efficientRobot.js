@@ -149,10 +149,13 @@ function routeRobot(state, memory) {
 
 
 // Robot Type III - Smart Route Calculator ----------
+// Sample { 'Alice\'s House': [ 'Bob\'s House', 'Cabin', 'Post Office' ]}
+// Sample { 'Bob\'s House': [ 'Alice\'s House', 'Town Hall' ], }
+// Place = Alice's House, Target = Town Hall
 
 function findRoute(graph, from, to) {
     let work = [{ at: from, route: [] }];
-    for (let i = 0; i < work.length; i++) {
+    for (let i = 0; i < work.length; i++) { 
         let { at, route } = work[i];
         for (let place of graph[at]) {
             if (place == to) return route.concat(place);
@@ -193,6 +196,7 @@ function goalOrientedRobot({ place, parcels }, route) {
 
 // --------------------------------------------------------
 
+runRobot(VillageState.random(), goalOrientedRobot, []);
 
 
 function compareRobots(robot1, memory1, robot2, memory2) {
@@ -210,5 +214,3 @@ function compareRobots(robot1, memory1, robot2, memory2) {
     console.log(`Robot 1 Average: ${robo1count / 100}`);
     console.log(`Robot 2 Average: ${robo2count / 100}`);
 }
-
-compareRobots(routeRobot, [], goalOrientedRobot, []);
