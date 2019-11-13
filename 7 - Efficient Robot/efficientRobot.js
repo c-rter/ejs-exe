@@ -154,6 +154,7 @@ function routeRobot(state, memory) {
 // Place = Alice's House, Target = Town Hall
 
 function findRoute(graph, from, to) {
+    console.log(`From: ${from}, To: ${to}`)
     let work = [{ at: from, route: [] }];
     for (let i = 0; i < work.length; i++) {
         let { at, route } = work[i];
