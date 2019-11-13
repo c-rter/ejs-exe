@@ -198,7 +198,7 @@ function goalOrientedRobot({ place, parcels }, route) {
 // --------------------------------------------------------
 
 
-// Robot Type III - More Efficient Robot ----------
+// Robot Type IV - More Efficient Robot ----------
 
 
 
