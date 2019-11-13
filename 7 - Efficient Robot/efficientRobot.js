@@ -162,7 +162,7 @@ function routeRobot(state, memory) {
   Shop: [ 'Grete\'s House', 'Marketplace', 'Town Hall' ],
   Marketplace: [ 'Farm', 'Post Office', 'Shop', 'Town Hall' ] } */
 
-function findRoute(graph, from, to) {
+  function findRoute(graph, from, to) {
     console.log(`From: ${from}, To: ${to}`)
     let work = [{ at: from, route: [] }];
     for (let i = 0; i < work.length; i++) {
@@ -202,14 +202,44 @@ function goalOrientedRobot({ place, parcels }, route) {
 
 
 
+function findRoute2(graph, from, to) {
+    console.log(`From: ${from}, To: ${to}`)
+    let work = [{ at: from, route: [] }];
+    let optimalRoute = [];
+    for (let i = 0; i < work.length; i++) {
+        let { at, route } = work[i];
+        for (let place of graph[at]) {
+            if (place == to) {
+                console.log(work);
+                optimalRoute.push(route.concat(place));
+            }
+            if (!work.some(w => w.at == place)) {
+                work.push({ at: place, route: route.concat(place) });
+            }
+        }
+    }
+    optimalRoute.reduce((a, b) => a.length > b.length ? a : b);
+    return optimalRoute[0];
+}
 
-
+function goalOrientedRobot2({ place, parcels }, route) {
+    if (route.length == 0) {
+        let parcel = parcels[0];
+        if (parcel.place != place) {
+            route = findRoute2(roadGraph, place, parcel.place);
+            // Finds a route to the first parcel if none are currently carried
+        } else {
+            route = findRoute2(roadGraph, place, parcel.address);
+            // Finds a route for the first parcel in an array's destination, if carried
+        }
+    }
+    console.log(`Current Route: ${route}`);
+    return { direction: route[0], memory: route.slice(1) };
+}
 
 
 
 // --------------------------------------------------------
-
-runRobot(VillageState.random(), goalOrientedRobot, []);
 
 
 function compareRobots(robot1, memory1, robot2, memory2) {
@@ -227,3 +257,5 @@ function compareRobots(robot1, memory1, robot2, memory2) {
     console.log(`Robot 1 Average: ${robo1count / 100}`);
     console.log(`Robot 2 Average: ${robo2count / 100}`);
 }
+
+compareRobots(goalOrientedRobot, [], goalOrientedRobot2, []);
