@@ -30,21 +30,6 @@ function buildGraph(edges) {
 
 const roadGraph = buildGraph(roads);
 
-
-/* { 'Alice\'s House': [ 'Bob\'s House', 'Cabin', 'Post Office' ],
-  'Bob\'s House': [ 'Alice\'s House', 'Town Hall' ],
-  Cabin: [ 'Alice\'s House' ],
-  'Post Office': [ 'Alice\'s House', 'Marketplace' ],
-  'Town Hall': [ 'Bob\'s House', 'Daria\'s House', 'Marketplace', 'Shop' ],
-  'Daria\'s House': [ 'Ernie\'s House', 'Town Hall' ],
-  'Ernie\'s House': [ 'Daria\'s House', 'Grete\'s House' ],
-  'Grete\'s House': [ 'Ernie\'s House', 'Farm', 'Shop' ],
-  Farm: [ 'Grete\'s House', 'Marketplace' ],
-  Shop: [ 'Grete\'s House', 'Marketplace', 'Town Hall' ],
-  Marketplace: [ 'Farm', 'Post Office', 'Shop', 'Town Hall' ] } */
-
-// Village State Class
-
 class VillageState {
     constructor(place, parcels) {
         this.place = place;
@@ -114,18 +99,6 @@ VillageState.random = function (parcelCount = 5) {
 
 
 // Robot Type III - Smart Route Calculator ----------
-
-/* { 'Alice\'s House': [ 'Bob\'s House', 'Cabin', 'Post Office' ],
-  'Bob\'s House': [ 'Alice\'s House', 'Town Hall' ],
-  Cabin: [ 'Alice\'s House' ],
-  'Post Office': [ 'Alice\'s House', 'Marketplace' ],
-  'Town Hall': [ 'Bob\'s House', 'Daria\'s House', 'Marketplace', 'Shop' ],
-  'Daria\'s House': [ 'Ernie\'s House', 'Town Hall' ],
-  'Ernie\'s House': [ 'Daria\'s House', 'Grete\'s House' ],
-  'Grete\'s House': [ 'Ernie\'s House', 'Farm', 'Shop' ],
-  Farm: [ 'Grete\'s House', 'Marketplace' ],
-  Shop: [ 'Grete\'s House', 'Marketplace', 'Town Hall' ],
-  Marketplace: [ 'Farm', 'Post Office', 'Shop', 'Town Hall' ] } */
 
 function findRoute(graph, from, to) {
     // console.log(`From: ${from}, To: ${to}`)
