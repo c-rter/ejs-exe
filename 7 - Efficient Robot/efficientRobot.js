@@ -163,13 +163,13 @@ function routeRobot(state, memory) {
   Marketplace: [ 'Farm', 'Post Office', 'Shop', 'Town Hall' ] } */
 
   function findRoute(graph, from, to) {
-    console.log(`From: ${from}, To: ${to}`)
+   // console.log(`From: ${from}, To: ${to}`)
     let work = [{ at: from, route: [] }];
     for (let i = 0; i < work.length; i++) {
         let { at, route } = work[i];
         for (let place of graph[at]) {
             if (place == to) {
-                console.log(work);
+               // console.log(work);
                 return route.concat(place);
             }
             if (!work.some(w => w.at == place)) {
@@ -211,15 +211,20 @@ function findRoute2(graph, from, to) {
         for (let place of graph[at]) {
             if (place == to) {
                 console.log(work);
-                optimalRoute.push(route.concat(place));
+                let finalRoute = route.concat(place);
+                console.log(JSON.stringify(finalRoute));
+                console.log(typeof finalRoute);
+                optimalRoute.push(finalRoute);
             }
             if (!work.some(w => w.at == place)) {
                 work.push({ at: place, route: route.concat(place) });
             }
         }
     }
-    optimalRoute.reduce((a, b) => a.length > b.length ? a : b);
-    return optimalRoute[0];
+    console.log(`Optimal Routes: ${JSON.stringify(optimalRoute)}`);
+    let trulyOptimal = optimalRoute.reduce((a, b) => a.length > b.length ? b : a);
+    console.log(`Truly Optimal:${trulyOptimal}`);
+    return trulyOptimal;
 }
 
 function goalOrientedRobot2({ place, parcels }, route) {
@@ -253,7 +258,8 @@ function compareRobots(robot1, memory1, robot2, memory2) {
         robo1count += runRobot(currentState, robot1, memory1);
         robo2count += runRobot(currentState, robot2, memory2);
     }
-
+console.log(robo1count);
+console.log(robo2count);
     console.log(`Robot 1 Average: ${robo1count / 100}`);
     console.log(`Robot 2 Average: ${robo2count / 100}`);
 }
