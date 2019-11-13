@@ -113,41 +113,6 @@ VillageState.random = function (parcelCount = 5) {
 };
 
 
-// Robot Type I - Random ---------------------
-
-function randomRobot(state) {
-    return { direction: randomPick(roadGraph[state.place]) };
-}
-
-// runRobot(VillageState.random(), randomRobot);
-
-// ------------------------------------------
-
-
-
-
-// Robot Type II - Pre-determined Route --------------
-
-const mailRoute = [
-    "Alice's House", "Cabin", "Alice's House", "Bob's House",
-    "Town Hall", "Daria's House", "Ernie's House",
-    "Grete's House", "Shop", "Grete's House", "Farm",
-    "Marketplace", "Post Office"
-];
-
-function routeRobot(state, memory) {
-    if (memory.length == 0) {
-        memory = mailRoute;
-    }
-    return { direction: memory[0], memory: memory.slice(1) };
-}
-
-// runRobot(VillageState.random(), routeRobot, []);
-
-// ---------------------------------------------------
-
-
-
 // Robot Type III - Smart Route Calculator ----------
 
 /* { 'Alice\'s House': [ 'Bob\'s House', 'Cabin', 'Post Office' ],
@@ -162,14 +127,14 @@ function routeRobot(state, memory) {
   Shop: [ 'Grete\'s House', 'Marketplace', 'Town Hall' ],
   Marketplace: [ 'Farm', 'Post Office', 'Shop', 'Town Hall' ] } */
 
-  function findRoute(graph, from, to) {
-   // console.log(`From: ${from}, To: ${to}`)
+function findRoute(graph, from, to) {
+    // console.log(`From: ${from}, To: ${to}`)
     let work = [{ at: from, route: [] }];
     for (let i = 0; i < work.length; i++) {
         let { at, route } = work[i];
         for (let place of graph[at]) {
             if (place == to) {
-               // console.log(work);
+                // console.log(work);
                 return route.concat(place);
             }
             if (!work.some(w => w.at == place)) {
@@ -201,7 +166,6 @@ function goalOrientedRobot({ place, parcels }, route) {
 // Robot Type IV - More Efficient Robot ----------
 
 
-
 function findRoute2(graph, from, to) {
     console.log(`From: ${from}, To: ${to}`)
     let work = [{ at: from, route: [] }];
@@ -210,13 +174,10 @@ function findRoute2(graph, from, to) {
         let { at, route } = work[i];
         for (let place of graph[at]) {
             if (place == to) {
-                console.log(work);
                 let finalRoute = route.concat(place);
-                console.log(JSON.stringify(finalRoute));
-                console.log(typeof finalRoute);
                 optimalRoute.push(finalRoute);
             }
-            if (!work.some(w => w.at == place)) {
+            if (!work.some(w => w.at == place) && place != to) {
                 work.push({ at: place, route: route.concat(place) });
             }
         }
@@ -229,17 +190,24 @@ function findRoute2(graph, from, to) {
 
 function goalOrientedRobot2({ place, parcels }, route) {
     if (route.length == 0) {
-        let parcel = parcels[0];
-        if (parcel.place != place) {
-            route = findRoute2(roadGraph, place, parcel.place);
-            // Finds a route to the first parcel if none are currently carried
-        } else {
-            route = findRoute2(roadGraph, place, parcel.address);
-            // Finds a route for the first parcel in an array's destination, if carried
+        let parcelPack = parcels;
+        for (parcel of parcelPack) {
+            if (parcel.place != place) {
+                route = findRoute2(roadGraph, place, parcel.place);
+                console.log(`Current Route: ${route}`);
+                return { direction: route[0], memory: route.slice(1) };
+                // Finds a route to the first parcel if none are currently carried
+            }
         }
+
+        route = findRoute2(roadGraph, place, parcelPack[0].address);
+
+        // Finds a route for the first parcel in an array's destination, if carried
+        //}
     }
     console.log(`Current Route: ${route}`);
     return { direction: route[0], memory: route.slice(1) };
+
 }
 
 
@@ -258,8 +226,8 @@ function compareRobots(robot1, memory1, robot2, memory2) {
         robo1count += runRobot(currentState, robot1, memory1);
         robo2count += runRobot(currentState, robot2, memory2);
     }
-console.log(robo1count);
-console.log(robo2count);
+    console.log(robo1count);
+    console.log(robo2count);
     console.log(`Robot 1 Average: ${robo1count / 100}`);
     console.log(`Robot 2 Average: ${robo2count / 100}`);
 }
