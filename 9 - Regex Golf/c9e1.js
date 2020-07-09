@@ -8,15 +8,9 @@ pop and prop
 
 ferret, ferry, and ferrari
 
-Any word ending in ious
+Any word ending in ious */
 
-A whitespace character followed by a period, comma, colon, or semicolon
 
-A word longer than six letters
-
-A word without the letter e (or E)
-
-*/
 
 verify(/ca(r|t)/,
        ["my car", "bad cats"],
@@ -34,15 +28,23 @@ verify(/ious\b/,
        ["how delicious", "spacious room"],
        ["ruinous", "consciousness"]);
 
-verify(/.../,
+/* A whitespace character followed by a period, comma, colon, or semicolon
+
+A word longer than six letters
+
+A word without the letter e (or E)
+
+*/
+
+verify(/\s\./,
        ["bad punctuation ."],
        ["escape the period"]);
 
-verify(/.../,
+verify(/\w{7,}/,
        ["hottentottententen"],
        ["no", "hotten totten tenten"]);
 
-verify(/.../,
+verify(/\b[^\We]+\b/i,
        ["red platypus", "wobbling nest"],
        ["earth bed", "learning ape", "BEET"]);
 
