@@ -30,7 +30,7 @@ verify(/ferr(et|y|ari)/,
        ["ferret", "ferry", "ferrari"],
        ["ferrum", "transfer A"]);
 
-verify(/.../,
+verify(/ious\b/,
        ["how delicious", "spacious room"],
        ["ruinous", "consciousness"]);
 
