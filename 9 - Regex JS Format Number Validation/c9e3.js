@@ -1,7 +1,7 @@
 // Fill in this regular expression.
 
 // \d+ | \-\d+ | \+\d+ | \d+\.\d+ | \.\d+ | \d+\. | \d+\.\d\w\d  
-let number = /^\d+$|^\-\d+$|^\+\d+$|^\d\.\d+$|^\.\d+$/;
+let number = /^\d+$|^\-\d+$|^\+\d+$|^\d\.\d+$|^\.\d+$|^\d+\.$|^\d\.\d\w\d$|^\d\w\-\d$/;
 
 // Tests:
 for (let str of ["1", "-1", "+15", "1.55", ".5", "5.",
