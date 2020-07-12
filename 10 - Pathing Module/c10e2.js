@@ -18,4 +18,4 @@ for (let route of roads) {
      
 console.log(buildGraph);
 console.log(twoEleArr);
-module.exports = buildGraph(twoEleArr);
+exports.roadGraph = buildGraph(twoEleArr);
