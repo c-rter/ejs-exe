@@ -61,3 +61,74 @@ console.log(group.has(10));
 for (let value of Group.from(["a", "b", "c"])) {
     console.log(value);
 }
+
+/* class Group {
+
+    constructor() {
+        this.storage = [];
+    }
+
+    add(v) {
+        if (!this.has(v)) {
+            this.storage.push(v);
+        }
+    }
+
+    delete(v) {
+        if (this.has(v)) {
+            this.storage = this.storage.filter(a => a !== v);
+        }
+    }
+
+    has(v) {
+        let value = false;
+        for (let item of this.storage) {
+            if (v === item) {
+                value = true;
+            }
+        }
+        return value;
+    }
+  
+  	[Symbol.iterator] () {
+      return new groupIterator(this.storage);
+    }
+  
+    static from(array) {
+        let a = new Group;
+        for (let value of array) {
+            a.add(value);
+        }
+        return a;
+    }
+
+}
+
+class groupIterator {
+  
+  constructor (group) {
+    this.group = group;
+    this.count = 0;
+  }
+  
+  next () {
+    if (this.count == this.group.length) {
+      return {done: true};
+    }
+    
+    this.count++;
+    return {value: "value: " + this.group[this.count-1]};    
+    
+  }
+  
+}
+
+
+for (let value of Group.from(["a", 27, "c"])) {
+  console.log(value);
+}
+// → a
+// → b
+// → c
+
+ */
