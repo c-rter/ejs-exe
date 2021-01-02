@@ -39,3 +39,48 @@ group.add(10);
 group.delete(10);
 console.log(group.has(10));
   // → false
+
+/* alternate
+
+
+class Group {
+
+    constructor() {
+        this.storage = [];
+    }
+
+    add(v) {
+        if (!this.has(v)) {
+            this.storage.push(v);
+        }
+    }
+
+    delete(v) {
+        if (this.has(v)) {
+            this.storage = this.storage.filter(a => a !== v);
+        }
+    }
+
+    has(v) {
+        let value = false;
+        for (let item of this.storage) {
+            if (v === item) {
+                value = true;
+            }
+        }
+        return value;
+    }
+
+    static from(array) {
+        let a = new Group;
+        for (let value of array) {
+            a.add(value);
+
+        }
+        return a;
+    }
+
+} 
+
+
+*/
