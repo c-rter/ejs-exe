@@ -1,0 +1,29 @@
+<style>
+
+  #balloon {
+    font-size: 20px;
+  }
+
+</style>
+
+<p><div id="balloon">🎈</div></p>
+
+<script>
+  let balloon = document.querySelector("#balloon");
+  let current = 20;
+ 
+  window.addEventListener("keydown", event => {
+    if (event.key == "ArrowUp") {
+      current += 2;
+        balloon.style.fontSize = current + "px";
+        event.preventDefault();
+    }
+     
+    if (event.key == "ArrowDown") {
+        current -= 2;
+        balloon.style.fontSize = current + "px";
+        event.preventDefault();
+}
+                           
+  });
+</script>
