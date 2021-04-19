@@ -1,3 +1,3 @@
 # ejs-exe
 
-JavaScript Exercises
+Exercises from Marijn Haverbeke's Eloquent Javascript
